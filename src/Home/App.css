@@ -1,42 +1,145 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+header {
+  height: 100vh;
+  width: 100%;
+  background-image: url(/src/assets/Background.png);
+  background-size: cover;
+  background-color: currentcolor;
+  box-shadow: inset 0px -40px 20px rgb(111 204 216);
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+h1 {
+  color: white;
+  font-size: 32px;
+  text-shadow: 2px 3px 4px var(--DarkColor1);
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 35px 15px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+nav ul li {
+  list-style-type: none;
+  display: inline-block;
+  padding: 10px 25px;
+
 }
 
-.card {
-  padding: 2em;
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: bold;
+  text-transform: capitalize;
+  text-shadow: 2px 3px 4px var(--DarkColor1);
 }
 
-.read-the-docs {
-  color: #888;
+nav ul li a:hover {
+  color: var(--DarkColor1);
+  transition: 0.4s;
+  text-shadow: 2px 3px 4px var(--LightColor1);
+}
+
+.HomeTextDiv {
+  display: flex;
+  margin-left: 25px;
+  justify-content: space-evenly;
+  align-items: flex-end;
+}
+
+.HomeTextDiv p {
+  background-color: rgb(255 255 255 / 50%);
+  padding: 12px;
+  border: 1px solid var(--DarkColor1);
+  border-radius: 20px;
+  text-align: justify;
+  line-height: 30px;
+  font-size: 25px;
+  width: 60%;
+}
+
+.HomeTextDiv img {
+  width: 300px;
+  height: 300px;
+  transform: rotate(315deg);
+  filter: drop-shadow(2px 4px 6px var(--DarkColor1));
+}
+
+#About {
+  background-color: rgb(111 204 216);
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.HomeComponent {
+  background-image: url(/src/assets/Background.png);
+  display: flex;
+  width: 60%;
+  height: 80%;
+  flex-direction: column;
+  border: 1px solid;
+  border-radius: 20px;
+  box-shadow: 3px 4px 8px black;
+}
+
+.HomeHead {
+  background-color: rgb(10 113 179 / 80%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid;
+  border-radius: 20px 20px 0 0;
+  height: 15%;
+}
+
+.HomeBody {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex: 1;
+}
+
+.HomeBody p {
+  text-align: justify;
+  line-height: 40px;
+  font-size: 20px;
+  width: 90%;
+}
+
+.HomeFoot {
+  background-color: rgb(71 135 135 / 80%);
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  border-top: 1px solid;
+  border-radius: 0 0 20px 20px;
+  height: 15%;
+}
+
+#Login {
+  height: 100vh;
+  width: 100%;
+  background-image: url(/src/assets/Background.png);
+  background-size: cover;
+  background-color: currentcolor;
+  box-shadow: inset 0px -40px 20px rgb(111 204 216);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+#Contato {
+  background-color: rgb(111 204 216);
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
