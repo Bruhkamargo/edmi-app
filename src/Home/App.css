@@ -44,7 +44,8 @@ nav ul li a:hover {
 
 .HomeTextDiv {
   display: flex;
-  margin-left: 25px;
+  margin-left: 5%;
+  margin-top: 5%;
   justify-content: space-evenly;
   align-items: flex-end;
 }
@@ -61,8 +62,8 @@ nav ul li a:hover {
 }
 
 .HomeTextDiv img {
-  width: 300px;
-  height: 300px;
+  max-width: 300px;
+  max-height: 300px;
   transform: rotate(315deg);
   filter: drop-shadow(2px 4px 6px var(--DarkColor1));
 }
@@ -80,7 +81,7 @@ nav ul li a:hover {
   background-image: url(/src/assets/Background.png);
   display: flex;
   width: 60%;
-  height: 80%;
+  height: 65%;
   flex-direction: column;
   border: 1px solid;
   border-radius: 20px;
@@ -101,7 +102,6 @@ nav ul li a:hover {
   display: flex;
   align-items: flex-start;
   justify-content: center;
-  flex: 1;
 }
 
 .HomeBody p {
@@ -142,4 +142,86 @@ nav ul li a:hover {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+
+.form-contato {
+  background-image: url(/src/assets/Background.png);
+  display: flex;
+  color: white;
+  width: 60%;
+  height: 65%;
+  flex-direction: column;
+  border: 1px solid;
+  border-radius: 20px;
+  box-shadow: 3px 4px 8px black;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.form-contato h3 {
+  font-size: 25px;
+}
+
+.form-contato form {
+  display: flex;
+  height: 80%;
+  width: 90%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.form-input {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid;
+  height: 25px;
+  width: 80%;
+  padding-left: 6px;
+}
+
+.form-input::placeholder {
+  color: white;
+}
+
+.form-contato form button  {
+  border: none;
+  width: 150px;
+  height: 35px;
+  border-radius: 25px;
+}
+
+footer {
+
+  background-color: black;
+  color: white;
+  display: flex;
+  height: 15%;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.social {
+  display: flex;
+  justify-content: space-around;
+  width: 20%;
+}
+
+.social a i {
+  color: white;
+  font-size: 25px;
+}
+
+footer p {
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.Health {
+  color: rgb(39 150 115);
+}
+
+.Tec {
+  color: rgb(0 74 173);
 }

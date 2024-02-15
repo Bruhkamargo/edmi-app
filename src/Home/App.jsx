@@ -2,6 +2,7 @@ import { useState } from 'react'
 import KidGirl from '../assets/KidGirl.png'
 import Autism from '../assets/Autism.png'
 import './App.css'
+import './AppResponsive.css'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -11,7 +12,7 @@ function App() {
       <header id='Home'>
         <nav>
           <h1>Calculadora de Desenvolvimento Motor Infatil</h1>
-          <ul>
+          <ul className='TopMenu'>
             <li><a href='#Home'> Início </a></li>
             <li><a href='#About'> Sobre Nós </a></li>
             <li><a href='#Login'> Calculadora </a></li>
@@ -25,7 +26,6 @@ function App() {
             É importante realizar um acompanhamento do desenvolvimento motor da criança, principalmente nos primeiros anos de vida.
             Sendo assim essa calculadora irá le ajudar a compreender o processos de desenvolvimento
           </p>
-          <img src={Autism} alt="" />
         </div>
       </header>
 
@@ -56,33 +56,30 @@ function App() {
       </div>
 
       {/*Contato*/}
-      <div id='Contato'>
-        <div className='HomeComponent'>
-          <div className='HomeHead'>
-            <h2>Head</h2>
-          </div>
-          <div className='HomeBody'>
-            <h2>Body</h2>
-          </div>
-          <div className='HomeFoot'>
-            <h2>Footer</h2>
-          </div>
+      <div id="Contato">
+        <div className="form-contato">
+          <h3>Contato</h3>
+          <p>Duvidas<span>?</span> Entre em contato<span>!</span></p>
+          <form>
+            <input className="form-input" type="text" placeholder="Nome" name="Name" ></input>
+            <input className="form-input" type="text" placeholder="Email" name="Email" ></input>
+            <input className="form-input" type="text" placeholder="Assunto" name="Subject" ></input>
+            <input className="form-input" type="text" placeholder="Messagem" name="Message" ></input>
+            <button type="submit">Enviar</button>
+          </form>
         </div>
-
-        <footer>
-          <div>
-            <p>O essencial é invisível aos olhos.</p>
-            <p>Antoine de Saint-Exupéry</p>
-
-          </div>
-
-          <div class="social">
-            <a href="https://github.com/Bruhkamargo"> <i class="fab fa-github"></i> </a>
-            <p class="end">Copyright By Bruno Camargo</p>
-          </div>
-        </footer>
-
       </div>
+
+      <footer>
+
+        <div className="social">
+          {/* <a href="#"> <i className="fab fa-instagram"></i> </a> */}
+          <a href="#https://github.com/Bruhkamargo"> <i className="fab fa-github"></i> </a>
+          <a href="https://wa.me/5549998193608"> <i className="fab fa-whatsapp"></i> </a>
+        </div>
+        <p>Copyright By <span className='Health'>Health</span>&<span className='Tec'>Tec</span></p>
+      </footer>
+
     </>
   )
 }
