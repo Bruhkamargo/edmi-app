@@ -25,9 +25,9 @@ export default () => {
         }
 
         let data = { Peso: Number(NumbWeight), Altura: Number(NumbHeight) };
-        let { data: NewUser } = await axios.post(`${baseUrl}/users`, data);
+        let { data: Result } = await axios.post(`${baseUrl}/users`, data);
 
-        SetAxiosTeste(NewUser);
+        SetAxiosTeste(Result);
 
         SetNumbHeight(0);
         SetNumbWeight(0);
