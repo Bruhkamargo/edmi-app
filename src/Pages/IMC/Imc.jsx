@@ -12,8 +12,7 @@ export default () => {
 
     const getUsers = async () => {
         const { data } = await axios.get(`${baseUrl}/users`);
-        console.log(data);
-        SetAxiosTeste(`${data}`);
+        SetAxiosTeste(data[data.length - 1])
     };
 
     useEffect(() => {
@@ -28,9 +27,10 @@ export default () => {
         let data = { Peso: Number(NumbWeight), Altura: Number(NumbHeight) };
         let { data: NewUser } = await axios.post(`${baseUrl}/users`, data);
 
+        SetAxiosTeste(NewUser);
+
         SetNumbHeight(0);
         SetNumbWeight(0);
-        getUsers();
     }
 
     return (
@@ -78,7 +78,7 @@ export default () => {
             </div>
             <div className="ImcResult">
                 <span>
-                    {AxiosTeste}
+                    {AxiosTeste ? AxiosTeste.id : <></>}
                 </span>
             </div>
 
