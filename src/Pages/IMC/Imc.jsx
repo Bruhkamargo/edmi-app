@@ -13,12 +13,25 @@ export default () => {
     const getUsers = async () => {
         const { data } = await axios.get(`${baseUrl}/users`);
         console.log(data);
-        SetAxiosTeste(data[0]);
-      };
+        SetAxiosTeste(`${data}`);
+    };
 
     useEffect(() => {
         getUsers()
     }, []);
+
+    const CalcIMC = async () => {
+        if (!NumbWeight || !NumbHeight) {
+            return alert('Preencha os campos!')
+        }
+
+        let data = { Peso: Number(NumbWeight), Altura: Number(NumbHeight) };
+        let { data: NewUser } = await axios.post(`${baseUrl}/users`, data);
+
+        SetNumbHeight(0);
+        SetNumbWeight(0);
+        getUsers();
+    }
 
     return (
         <div id="IMC">
@@ -60,7 +73,7 @@ export default () => {
                         placeholder='Altura em cm'
                     ></input>
                 </span>
-                <button className="IMCButton">Calcular</button>
+                <button className="IMCButton" onClick={() => { CalcIMC() }}>Calcular</button>
 
             </div>
             <div className="ImcResult">
