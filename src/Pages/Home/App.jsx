@@ -1,6 +1,7 @@
 import { useState } from 'react'
-import KidGirl from '../assets/KidGirl.png'
-import Autism from '../assets/Autism.png'
+
+import Imc from '../IMC/Imc'
+
 import './App.css'
 import './AppResponsive.css'
 
@@ -48,9 +49,7 @@ function App() {
       {/*Calculadora */}
       <div id='Login'>
         <div className='HomeComponent'>
-          <div className='HomeBody'>
-            <h2>Login</h2>
-          </div>
+          <Imc />
         </div>
 
       </div>
@@ -74,10 +73,10 @@ function App() {
 
         <div className="social">
           {/* <a href="#"> <i className="fab fa-instagram"></i> </a> */}
-          <a href="#https://github.com/Bruhkamargo"> <i className="fab fa-github"></i> </a>
+          <a href="https://github.com/Bruhkamargo"> <i className="fab fa-github"></i> </a>
           <a href="https://wa.me/5549998193608"> <i className="fab fa-whatsapp"></i> </a>
         </div>
-        <p>Copyright By <span className='Health'>Health</span>&<span className='Tec'>Tec</span></p>
+        <p>Copyright By <a href='https://bruhkamargo.github.io/HealthTec'><span className='Health'>Health</span>&<span className='Tec'>Tec</span></a></p>
       </footer>
 
     </>

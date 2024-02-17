@@ -11,6 +11,7 @@ h1 {
   color: white;
   font-size: 32px;
   text-shadow: 2px 3px 4px var(--DarkColor1);
+  margin-bottom: 10px;
 }
 
 nav {
@@ -79,10 +80,8 @@ nav ul li a:hover {
 
 .HomeComponent {
   background-image: url(/src/assets/Background.png);
-  display: flex;
-  width: 60%;
-  height: 65%;
-  flex-direction: column;
+  width: 65%;
+  height: 85%;
   border: 1px solid;
   border-radius: 20px;
   box-shadow: 3px 4px 8px black;
