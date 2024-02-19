@@ -1,11 +1,18 @@
 import { useState } from 'react'
 
+
 import Imc from '../IMC/Imc'
 
 import './App.css'
 import './AppResponsive.css'
 
-const ipcRenderer = require('electron').ipcRenderer;
+const electron = window.require('electron');
+const { ipcRenderer } = electron || {};
+
+if (ipcRenderer) {
+  ipcRenderer.send('mensagem-do-front', 'Olá, processo principal!');
+  
+}
 
 function App() {
   const [count, setCount] = useState(0)
