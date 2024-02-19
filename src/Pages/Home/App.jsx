@@ -5,6 +5,8 @@ import Imc from '../IMC/Imc'
 import './App.css'
 import './AppResponsive.css'
 
+const ipcRenderer = require('electron').ipcRenderer;
+
 function App() {
   const [count, setCount] = useState(0)
 
@@ -14,7 +16,9 @@ function App() {
         <nav>
           <h1>Calculadora de Desenvolvimento Motor Infatil</h1>
           <ul className='TopMenu'>
-            <li><a href='#Home'> Início </a></li>
+            <li><a href='#Home' onClick={() => {
+              ipcRenderer.send('Teste', 'Hello Word')
+            }}> Início </a></li>
             <li><a href='#About'> Sobre Nós </a></li>
             <li><a href='#Login'> Calculadora </a></li>
             <li><a href='#Contato'> Contato </a></li>

@@ -3,12 +3,14 @@ import axios from "axios";
 
 import './Imc.css'
 
+
 export default () => {
     const [BoolSexo, SetBoolSexo] = useState(true);
     const [NumbWeight, SetNumbWeight] = useState();
     const [NumbHeight, SetNumbHeight] = useState();
     const [AxiosTeste, SetAxiosTeste] = useState();
     const baseUrl = 'https://teste-backend-psi.vercel.app';
+    // const baseUrl = 'http://localhost:3001/'
 
     const getUsers = async () => {
         const { data } = await axios.get(`${baseUrl}/users`);
@@ -26,7 +28,6 @@ export default () => {
         let data = { Peso: Number(NumbWeight), Altura: Number(NumbHeight) };
         let { data: NewUser } = await axios.post(`${baseUrl}/users`, data);
         SetAxiosTeste(NewUser.Result);
-        console.log();
 
         SetNumbHeight(0);
         SetNumbWeight(0);
