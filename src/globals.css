@@ -6,9 +6,10 @@
 }
 
 :root {
-    --LightColor1: rgb(73, 197, 219);
+    --LightColor1: rgb(87 199 219);
     --DarkColor1: rgb(9, 70, 101);
 }
+
 body {
     display: flex;
     height: 100vh;
@@ -23,6 +24,7 @@ a {
     color: unset;
     text-decoration: unset;
 }
+
 button:hover {
     cursor: pointer;
 }

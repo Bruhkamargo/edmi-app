@@ -1,11 +1,10 @@
 import { useState } from 'react'
-
-import Imc from '../IMC/Imc'
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 
 import './App.css'
 import './AppResponsive.css'
 
-function App() {
+function HomePage() {
   const [count, setCount] = useState(0)
 
   return (
@@ -48,8 +47,38 @@ function App() {
 
       {/*Calculadora */}
       <div id='Login'>
-        <div className='HomeComponent'>
-          <Imc />
+        <div className='LoginComponent'>
+          <form action="" className='FormEntrada'>
+            <span className='FormSpan'>
+              <label>Nome Completo:</label>
+              <input type='text' className='FormInput'></input>
+            </span>
+            <span className='FormSpan'>
+              <label>Email:</label>
+              <input type='email' className='FormInput'></input>
+            </span>
+            <span className='FormSpan'>
+              <label>Telefone:</label>
+              <input type='tel' className='FormInput'></input>
+            </span>
+            <span className='CheckSpan'>
+              <span>
+                <label>Concordo com os termos:</label>
+                <input type='checkbox'></input>
+              </span>
+              <span>
+                <label>Receber emails:</label>
+                <input type='checkbox'></input>
+              </span>
+            </span>
+            <Link to="/edmi" className='LinkSubmitButton'>
+              <button className='SubmitButton'>Entrar</button>
+            </Link>
+          </form>
+          <span className='LoginText'>
+            <h3>Titulo</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo incidunt similique at provident voluptates atque maiores nihil laboriosam illo assumenda. Minima natus eius facere laboriosam ipsam? Placeat voluptas non fuga?</p>
+          </span>
         </div>
 
       </div>
@@ -83,4 +112,4 @@ function App() {
   )
 }
 
-export default App
+export default HomePage

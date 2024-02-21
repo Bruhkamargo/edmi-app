@@ -1,10 +1,7 @@
 header {
   height: 100vh;
   width: 100%;
-  background-image: url(/src/assets/Background.png);
-  background-size: cover;
-  background-color: currentcolor;
-  box-shadow: inset 0px -40px 20px rgb(111 204 216);
+  background-color: var(--LightColor1);
 }
 
 h1 {
@@ -19,6 +16,11 @@ nav {
   align-items: center;
   justify-content: space-between;
   padding: 35px 15px;
+  background-image: url(/src/assets/Background.png);
+  background-position: center;
+  background-size: cover;
+  background-color: currentcolor;
+  box-shadow: inset 0px -40px 20px var(--LightColor1);
 }
 
 nav ul li {
@@ -59,7 +61,7 @@ nav ul li a:hover {
   text-align: justify;
   line-height: 30px;
   font-size: 25px;
-  width: 60%;
+  width: 65%;
 }
 
 .HomeTextDiv img {
@@ -70,7 +72,7 @@ nav ul li a:hover {
 }
 
 #About {
-  background-color: rgb(111 204 216);
+  background-color: var(--LightColor1);
   height: 100vh;
   width: 100%;
   display: flex;
@@ -79,6 +81,8 @@ nav ul li a:hover {
 }
 
 .HomeComponent {
+  display: flex;
+  flex-direction: column;
   background-image: url(/src/assets/Background.png);
   width: 65%;
   height: 85%;
@@ -123,18 +127,85 @@ nav ul li a:hover {
 #Login {
   height: 100vh;
   width: 100%;
-  background-image: url(/src/assets/Background.png);
-  background-size: cover;
-  background-color: currentcolor;
-  box-shadow: inset 0px -40px 20px rgb(111 204 216);
+  background-color: var(--LightColor1);
+  box-shadow: inset 0px -40px 20px var(--LightColor1);
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
+.LoginComponent {
+  display: flex;
+  flex-direction: row;
+  background-image: url(/src/assets/Background.png);
+  width: 65%;
+  height: 85%;
+  border: 1px solid;
+  border-radius: 20px;
+  box-shadow: 3px 4px 8px black;
+}
+
+.LoginText {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  align-items: center;  
+  justify-content: center;
+}
+
+.LoginComponent p {
+  font-size: 15px;
+  line-height: 28px;
+  text-align: justify;
+  padding: 20px;
+}
+
+.FormEntrada {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+  justify-content: space-evenly;
+  margin-top: 10%;
+}
+
+.FormSpan {
+  display: flex;
+  width: 90%;
+  flex-direction: column;
+}
+
+.FormInput {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid;
+  height: 25px;
+  width: 80%;
+  padding-left: 6px;
+}
+
+.CheckSpan {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.LinkSubmitButton {
+  width: 40%;
+  height: 35px;
+  border-radius: 25px;
+}
+
+.SubmitButton {
+  width: 100%;
+  height: 35px;
+  border: none;
+  border-radius: 25px;
+  box-shadow: 5px 5px 5px var(--DarkColor1);
+}
 
 #Contato {
-  background-color: rgb(111 204 216);
+  background-color: var(--LightColor1);
   height: 100vh;
   width: 100%;
   display: flex;
