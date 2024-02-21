@@ -1,0 +1,55 @@
+#EDMI {
+    display: flex;
+    height: 100%;
+    background-image: url(/src/assets/Background.png);
+    background-position: center;
+    background-size: cover;
+    background-color: currentcolor;
+    padding: 5px
+}
+.LeftDiv {
+    display: flex;
+    flex-direction: column;
+    background-color: red;
+    width: 25%;
+    height: 100%;
+    padding: 5px
+}
+
+.LeftDivTop {
+    display: flex;
+    background-color: rgb(255, 255, 255);
+    height: 50%;
+    width: 100%;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.SpanEDMI {
+    display: flex;
+    width: 95%;
+    flex-direction: column;
+}
+
+.InputEDMI {    
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid;
+  height: 25px;
+  width: 100%;
+  padding-left: 6px;
+}
+
+.LeftDivBot {
+    background-color: rgb(109, 127, 167);
+    height: 50%;
+    width: 100%;
+}
+
+.RightDiv {
+    display: flex;
+    background-color: red;
+    flex: 1;
+    margin-left: 5px;
+}
