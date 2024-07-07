@@ -1,11 +1,22 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import axios from "axios";
 
 import './App.css'
 import './AppResponsive.css'
 
 function HomePage() {
   const [count, setCount] = useState(0)
+  const baseUrl = 'https://teste-backend-psi.vercel.app';
+
+  const getTeste = async () => {
+      const { data } = await axios.get(`${baseUrl}/users`);
+      console.log(data);
+  };
+
+  useEffect(() => {
+    getTeste()
+  }, []);
 
   return (
     <>
@@ -31,6 +42,7 @@ function HomePage() {
 
       {/*Sobre */}
       <div id='About'>
+        <button id='meuBotao' onClick={() => {console.log("Teste");}}> Teste </button>
         <div className='HomeComponent'>
           <div className='HomeHead'>
             <h2>Quem Somos</h2>

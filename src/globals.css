@@ -1,8 +1,9 @@
 * {
     padding: 0;
     margin: 0;
-    font-family: 'Josefin Sans', sans-serif;
+    font-family: "Open Sans", sans-serif;
     box-sizing: border-box;
+    outline: none;
 }
 
 :root {
@@ -28,3 +29,21 @@ a {
 button:hover {
     cursor: pointer;
 }
+
+/*Modal*/
+
+.Div-Janela {
+    position: fixed;
+    z-index: 2;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.35);
+    animation-name: fadeIn;
+    animation-duration: 0.5s;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }

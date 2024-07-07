@@ -1,55 +1,231 @@
 #EDMI {
     display: flex;
     height: 100%;
-    background-image: url(/src/assets/Background.png);
-    background-position: center;
-    background-size: cover;
-    background-color: currentcolor;
-    padding: 5px
 }
+
+.LabelSex {
+    font-size: 15px;
+    color: white;
+}
+
+#EDMI>div.LeftDiv>div.LeftDivTop>span:nth-child(5)>input {
+    width: 70%;
+}
+
 .LeftDiv {
     display: flex;
     flex-direction: column;
-    background-color: red;
     width: 25%;
-    height: 100%;
-    padding: 5px
-}
+    background-color: rgb(0 175 255);
 
-.LeftDivTop {
-    display: flex;
-    background-color: rgb(255, 255, 255);
-    height: 50%;
-    width: 100%;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-}
+    & h2 {
+        font-size: 22px;
+        text-align: center;
+        color: rgb(0, 70, 120);
+    }
 
-.SpanEDMI {
-    display: flex;
-    width: 95%;
-    flex-direction: column;
-}
+    & .LeftDivTop {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        height: 50%;
 
-.InputEDMI {    
-  background: transparent;
-  border: none;
-  border-bottom: 1px solid;
-  height: 25px;
-  width: 100%;
-  padding-left: 6px;
-}
+        & .SpanEDMI {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 10%;
+            margin: 0 5%;
 
-.LeftDivBot {
-    background-color: rgb(109, 127, 167);
-    height: 50%;
-    width: 100%;
+            & span {
+                align-self: center;
+            }
+
+            & input {
+                height: 80%;
+            }
+
+            & input[type="date"] {
+                border: none;
+                border-bottom: 1px solid white;
+                background: none;
+                color: white;
+            }
+
+            & input[type="text"] {
+                border: none;
+                border-bottom: 1px solid;
+                padding-left: 5px;
+                background: transparent;
+                color: white;
+                font-weight: bold;
+            }
+
+            & input[type="text"]::placeholder {
+                color: #FFFFFFbb;
+            }
+        }
+
+        & .SpanButton {
+            display: flex;
+            align-items: center;
+            flex-direction: row;
+            justify-content: flex-end;
+            padding-right: 10px;
+
+            & button {
+                background: rgba(255, 255, 255, 0.25);
+                color: white;
+                border: 1px solid white;
+                border-radius: 10px;
+                width: 50px;
+                height: 26px;
+            }
+        }
+    }
+
+    & .LeftDivBot {
+        display: flex;
+        height: 55%;
+        flex-direction: column;
+        justify-content: space-between;
+
+        & .DivResults {
+            display: flex;
+            justify-content: space-between;
+
+            & input {
+                background: transparent;
+                width: 50px;
+                border: none;
+                border-bottom: 1px solid white;
+                text-align: center;
+                font-weight: bold;
+                color: white;
+            }
+
+            & .SpanED {
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+
+                & input {
+                    width: 90%;
+                    align-self: center;
+                }
+            }
+        }
+
+        & .SpanResults {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            height: 100%;
+            padding: 3%;
+        }
+    }
 }
 
 .RightDiv {
     display: flex;
-    background-color: red;
     flex: 1;
-    margin-left: 5px;
+    flex-direction: column;
+    align-items: center;
+    padding: 5px;
+    background-color: rgb(240 180 250);
+
+    & .RightDivHead {
+        height: 10%;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+
+        & h1 {
+            color: #000000;
+            text-shadow: none;
+        }
+    }
+}
+
+/* ResultsTable.css */
+.results-table {
+    width: 100%;
+    height: 70%;
+    border-collapse: collapse;
+
+    & thead tr th {
+        background-color: rgba(255, 255, 255, 0.40)
+    }
+
+    & th:nth-child(1) {
+        width: 30%;
+        height: 50px;
+        font-weight: bold;
+        font-size: 16px;
+    }
+
+    & tbody {
+        & tr {
+            border: 1px solid #ff0000;
+            background-color: rgba(255, 255, 255, 0.8);
+
+        }
+
+        & td {
+            & p {
+                font-weight: bold;
+                font-size: 16px;
+            }
+        }
+    }
+
+}
+
+.results-table th,
+.results-table td {
+    border: 1px solid #000;
+    /* padding: 8px; */
+    text-align: center;
+}
+
+.results-table th {
+    background-color: #FFFFFF;
+}
+
+.results-table input {
+    width: 50%;
+    height: 50%;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.InputSpan {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+
+    & .SpanButtons {
+        display: flex;
+        height: 50%;
+        width: 30%;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    & button {
+        height: 100%;
+        border: 1px solid;
+        border-left: 0px solid;
+        background-color: #e9e9e9;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    & button:hover {
+        background-color: #a7a7a7;
+        font-weight: bold;
+    }
 }
