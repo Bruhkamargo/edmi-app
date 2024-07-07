@@ -83,6 +83,8 @@ export default () => {
   const [QM5, SetQM5] = useState(0);
   const [QM6, SetQM6] = useState(0);
 
+  const [Lateralidade, SetLateralidade] = useState('');
+
   const handleChange = async (year, testIndex) => {
     const TesteBilateral = ['0', '½', '1'];
     const TesteUnilateral = ['0', '1'];
@@ -432,18 +434,50 @@ export default () => {
           </tbody>
         </table>
 
-        <div className="RightDivHead">
+        <div className="RightDivFoot">
           <h2>Lateralidades</h2>
-          <span>
+          <div className="DivLateralidades">
             <span>
-              <div>1</div>
-              <div>2</div>
+              <div>
+                <label> Lateralidade</label>
+                <select onChange={(e) => { SetLateralidade(e.target.value) }}>
+                  <option value=""></option>
+                  <option value="Completo">Completo</option>
+                  <option value="Cruzado">Cruzado</option>
+                  <option value="Indefinido">Indefinido</option>
+                </select>
+              </div>
+              <div>
+                <label> Olhos</label>
+                <select>
+                  <option value=""></option>
+                  <option value="Direito">Direito</option>
+                  <option value="Esquerdo">Esquerdo</option>
+                  <option value="Indefinido">Indefinido</option>
+                </select>
+              </div>
             </span>
             <span>
-              <div>3</div>
-              <div>4</div>
+              <div>
+                <label> Mãos</label>
+                <select>
+                  <option value=""></option>
+                  <option value="Direito">Direito</option>
+                  <option value="Esquerdo">Esquerdo</option>
+                  <option value="Indefinido">Indefinido</option>
+                </select>
+              </div>
+              <div>
+                <label> Pés</label>
+                <select>
+                  <option value=""></option>
+                  <option value="Direito">Direito</option>
+                  <option value="Esquerdo">Esquerdo</option>
+                  <option value="Indefinido">Indefinido</option>
+                </select>
+              </div>
             </span>
-          </span>
+          </div>
         </div>
       </div>
       {Start ?
