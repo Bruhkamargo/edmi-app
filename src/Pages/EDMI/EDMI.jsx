@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from "react";
+import moment from 'moment';
 import axios from "axios";
+
+import Relatorio from "../../Functions/Relatorio";
 
 import Cal_DDN from "../../Functions/Age_calc";
 
@@ -8,6 +11,32 @@ import './Modal.css'
 
 
 export default () => {
+
+  function CallRelatorio() {
+    Relatorio(
+      {
+        Name: StrName,
+        Sex: BoolSexo ? "Masculino" : "Feminino",
+        Exam: moment().format('DD/MM/YYYY'),
+        Bday: moment(BirthDate).format('DD/MM/YYYY'),
+        Age: Age,
+        OthersData: Others,
+        Result: results,
+        IMG: IMG,
+        IDC: IdC,
+        QMG: QMG,
+        IDP: IdP,
+        IDN: IdN,
+        Scale: EsD,
+        IMS: [IM1, IM2, IM3, IM4, IM5, IM6],
+        QMS: [QM1, QM2, QM3, QM4, QM5, QM6],
+        Laterality: Laterality,
+        Eyes: Eyes,
+        Hands: Hands,
+        Feet: Feet,
+      }
+    )
+  }
 
   useEffect(() => {
     const handleBeforeUnload = (event) => {
@@ -83,7 +112,10 @@ export default () => {
   const [QM5, SetQM5] = useState(0);
   const [QM6, SetQM6] = useState(0);
 
-  const [Lateralidade, SetLateralidade] = useState('');
+  const [Laterality, SetLaterality] = useState('');
+  const [Eyes, SetEyes] = useState('');
+  const [Hands, SetHands] = useState('');
+  const [Feet, SetFeet] = useState('');
 
   const handleChange = async (year, testIndex) => {
     const TesteBilateral = ['0', '½', '1'];
@@ -353,7 +385,12 @@ export default () => {
             ></input>
           </span>
           <span className="SpanButton">
-            <button onClick={() => { SetBoolPoints(!BoolPoints) }}>&#8596;</button>
+            <button onClick={() => {
+              SetBoolPoints(!BoolPoints);
+              if (StrName == 'Manual') {
+                alert('Download do manual!')
+              }
+            }}>&#8596;</button>
           </span>
         </div>
 
@@ -436,48 +473,51 @@ export default () => {
 
         <div className="RightDivFoot">
           <h2>Lateralidades</h2>
-          <div className="DivLateralidades">
-            <span>
-              <div>
-                <label> Lateralidade</label>
-                <select onChange={(e) => { SetLateralidade(e.target.value) }}>
-                  <option value=""></option>
-                  <option value="Completo">Completo</option>
-                  <option value="Cruzado">Cruzado</option>
-                  <option value="Indefinido">Indefinido</option>
-                </select>
-              </div>
-              <div>
-                <label> Olhos</label>
-                <select>
-                  <option value=""></option>
-                  <option value="Direito">Direito</option>
-                  <option value="Esquerdo">Esquerdo</option>
-                  <option value="Indefinido">Indefinido</option>
-                </select>
-              </div>
-            </span>
-            <span>
-              <div>
-                <label> Mãos</label>
-                <select>
-                  <option value=""></option>
-                  <option value="Direito">Direito</option>
-                  <option value="Esquerdo">Esquerdo</option>
-                  <option value="Indefinido">Indefinido</option>
-                </select>
-              </div>
-              <div>
-                <label> Pés</label>
-                <select>
-                  <option value=""></option>
-                  <option value="Direito">Direito</option>
-                  <option value="Esquerdo">Esquerdo</option>
-                  <option value="Indefinido">Indefinido</option>
-                </select>
-              </div>
-            </span>
-          </div>
+          <span>
+            <div className="DivLateralidades">
+              <span>
+                <div>
+                  <label> Lateralidade</label>
+                  <select onChange={(e) => { SetLaterality(e.target.value) }}>
+                    <option value=""></option>
+                    <option value="Completo">Completo</option>
+                    <option value="Cruzado">Cruzado</option>
+                    <option value="Indefinido">Indefinido</option>
+                  </select>
+                </div>
+                <div>
+                  <label> Olhos</label>
+                  <select onChange={(e) => { SetEyes(e.target.value) }}>
+                    <option value=""></option>
+                    <option value="Direito">Direito</option>
+                    <option value="Esquerdo">Esquerdo</option>
+                    <option value="Indefinido">Indefinido</option>
+                  </select>
+                </div>
+              </span>
+              <span>
+                <div>
+                  <label> Mãos</label>
+                  <select onChange={(e) => { SetHands(e.target.value) }}>
+                    <option value=""></option>
+                    <option value="Direito">Direito</option>
+                    <option value="Esquerdo">Esquerdo</option>
+                    <option value="Indefinido">Indefinido</option>
+                  </select>
+                </div>
+                <div>
+                  <label> Pés</label>
+                  <select onChange={(e) => { SetFeet(e.target.value) }}>
+                    <option value=""></option>
+                    <option value="Direito">Direito</option>
+                    <option value="Esquerdo">Esquerdo</option>
+                    <option value="Indefinido">Indefinido</option>
+                  </select>
+                </div>
+              </span>
+            </div>
+            <button onClick={() => { CallRelatorio() }}>Salvar</button>
+          </span>
         </div>
       </div>
       {Start ?
