@@ -1,5 +1,18 @@
 import jsPDF from "jspdf";
 
+const Coordenadas = {
+    Age01: [[57.5, 266], [82.5, 266], [107.5, 266], [132.5, 266], [157.5, 266], [182.5, 266]],
+    Age02: [[57.5, 259], [82.5, 259], [107.5, 259], [132.5, 259], [157.5, 259], [182.5, 259]],
+    Age03: [[57.5, 252], [82.5, 252], [107.5, 252], [132.5, 252], [157.5, 252], [182.5, 252]],
+    Age04: [[57.5, 245], [82.5, 245], [107.5, 245], [132.5, 245], [157.5, 245], [182.5, 245]],
+    Age05: [[57.5, 238], [82.5, 238], [107.5, 238], [132.5, 238], [157.5, 238], [182.5, 238]],
+    Age06: [[57.5, 238], [82.5, 238], [107.5, 238], [132.5, 238], [157.5, 238], [182.5, 238]],
+    Age07: [[57.5, 231], [82.5, 231], [107.5, 231], [132.5, 231], [157.5, 231], [182.5, 231]],
+    Age08: [[57.5, 224], [82.5, 224], [107.5, 224], [132.5, 224], [157.5, 224], [182.5, 224]],
+    Age09: [[57.5, 217], [82.5, 217], [107.5, 217], [132.5, 217], [157.5, 217], [182.5, 217]],
+    Age10: [[57.5, 210], [82.5, 210], [107.5, 210], [132.5, 210], [157.5, 210], [182.5, 210]],
+    Age11: [[57.5, 203], [82.5, 203], [107.5, 203], [132.5, 203], [157.5, 203], [182.5, 203]]
+}
 
 /**
  * @description 
@@ -11,8 +24,6 @@ export default async (Children) => {
     const pdfDoc = new jsPDF({ orientation: "portrait" });
 
     //addImage(imageData, format, x, y, width, height, alias, compression, rotation)
-    // pdfDoc.addImage(Logo, "PNG", 10, 0, 30, 30);
-
     pdfDoc.setFont("helvetica", "bold");
     pdfDoc.setFontSize(18);
     pdfDoc.text("Escala de Desenvolvimento Motor", 105, 10, null, null, "center");
@@ -34,7 +45,7 @@ export default async (Children) => {
     pdfDoc.text("Resultados", 15, 50);
     pdfDoc.setFont("helvetica", "normal");
     pdfDoc.setFontSize(12);
-    
+
     /**Titulos */
     //cell(x, y, width, height, text, lineNumber, align)
     pdfDoc.setFont("helvetica", "bold");
@@ -64,7 +75,6 @@ export default async (Children) => {
     //cell(x, y, width, height, text, lineNumber, align)
     // console.log(Children.Result[2][0]);
     // console.log(Children.Result[2][1]);
-    debugger
     pdfDoc.cell(95, 62, 10, 7, " "); pdfDoc.text(`${Children.Result[2][0]}`, 98, 67);
     pdfDoc.cell(105, 62, 10, 7, " "); pdfDoc.text(`${Children.Result[3][0]}`, 108, 67);
     pdfDoc.cell(115, 62, 10, 7, " "); pdfDoc.text(`${Children.Result[4][0]}`, 118, 67);
@@ -172,12 +182,12 @@ export default async (Children) => {
     pdfDoc.cell(35, 147, 25, 7, " "); pdfDoc.text(`${Children.IMS[0]} Meses`, 36, 152); // IM1
     pdfDoc.cell(60, 147, 20, 7, " "); pdfDoc.text("IM - 4", 70, 152, null, null, "center");
     pdfDoc.cell(80, 147, 25, 7, " "); pdfDoc.text(`${Children.IMS[3]} Meses`, 81, 152); // IM4
-    
+
     pdfDoc.cell(15, 154, 20, 7, " "); pdfDoc.text("IM - 2", 25, 159, null, null, "center");
     pdfDoc.cell(35, 154, 25, 7, " "); pdfDoc.text(`${Children.IMS[1]} Meses`, 36, 159); // IM2
     pdfDoc.cell(60, 154, 20, 7, " "); pdfDoc.text("IM - 5", 70, 159, null, null, "center");
     pdfDoc.cell(80, 154, 25, 7, " "); pdfDoc.text(`${Children.IMS[4]} Meses`, 81, 159); // IM5
-    
+
     pdfDoc.cell(15, 161, 20, 7, " "); pdfDoc.text("IM - 3", 25, 166, null, null, "center");
     pdfDoc.cell(35, 161, 25, 7, " "); pdfDoc.text(`${Children.IMS[2]} Meses`, 36, 166); // IM3
     pdfDoc.cell(60, 161, 20, 7, " "); pdfDoc.text("IM - 6", 70, 166, null, null, "center");
@@ -193,12 +203,12 @@ export default async (Children) => {
     pdfDoc.cell(125, 147, 25, 7, " "); pdfDoc.text(`${Children.QMS[0]} Meses`, 126, 152); // QM1
     pdfDoc.cell(150, 147, 20, 7, " "); pdfDoc.text("QM - 4", 160, 152, null, null, "center");
     pdfDoc.cell(170, 147, 25, 7, " "); pdfDoc.text(`${Children.QMS[3]} Meses`, 171, 152); // QM4
-    
+
     pdfDoc.cell(105, 154, 20, 7, " "); pdfDoc.text("QM - 2", 115, 159, null, null, "center");
     pdfDoc.cell(125, 154, 25, 7, " "); pdfDoc.text(`${Children.QMS[1]} Meses`, 126, 159); // QM2
     pdfDoc.cell(150, 154, 20, 7, " "); pdfDoc.text("QM - 5", 160, 159, null, null, "center");
     pdfDoc.cell(170, 154, 25, 7, " "); pdfDoc.text(`${Children.QMS[4]} Meses`, 171, 159); // QM5
-    
+
     pdfDoc.cell(105, 161, 20, 7, " "); pdfDoc.text("QM - 3", 115, 166, null, null, "center");
     pdfDoc.cell(125, 161, 25, 7, " "); pdfDoc.text(`${Children.QMS[2]} Meses`, 126, 166); // QM3
     pdfDoc.cell(150, 161, 20, 7, " "); pdfDoc.text("QM - 6", 160, 166, null, null, "center");
@@ -211,13 +221,140 @@ export default async (Children) => {
 
     /**Graficos */
     pdfDoc.setFont("helvetica", "bold");
-    pdfDoc.cell(15, 185, 90, 7, " "); pdfDoc.text("Perfil Motor", 60, 190, null, null, "center");
-    pdfDoc.cell(105, 185, 90, 7, " "); pdfDoc.text("Historico", 150, 190, null, null, "center");
-    pdfDoc.setFont("helvetica", "normal");
+    pdfDoc.cell(15, 185, 180, 7, " "); pdfDoc.text("Perfil Motor", 105, 190, null, null, "center");
 
-    pdfDoc.cell(15, 192, 90, 100, " ");
-    pdfDoc.cell(105, 192, 90, 100, " ");
+    pdfDoc.cell(15, 192, 180, 91, " ");
+
+    pdfDoc.cell(15, 192, 30, 7, " "); pdfDoc.text("11 Anos", 30, 197, null, null, "center");
+    pdfDoc.cell(45, 192, 25, 7, " "); pdfDoc.text(".", 57.5, 196, null, null, "center");
+    pdfDoc.cell(70, 192, 25, 7, " "); pdfDoc.text(".", 82.5, 196, null, null, "center");
+    pdfDoc.cell(95, 192, 25, 7, " "); pdfDoc.text(".", 107.5, 196, null, null, "center");
+    pdfDoc.cell(120, 192, 25, 7, " "); pdfDoc.text(".", 132.5, 196, null, null, "center");
+    pdfDoc.cell(145, 192, 25, 7, " "); pdfDoc.text(".", 157.5, 196, null, null, "center");
+    pdfDoc.cell(170, 192, 25, 7, " "); pdfDoc.text(".", 182.5, 196, null, null, "center");
+
+    pdfDoc.cell(15, 199, 30, 7, " "); pdfDoc.text("10 Anos", 30, 204, null, null, "center");
+    pdfDoc.cell(45, 199, 25, 7, " "); pdfDoc.text(".", 57.5, 203, null, null, "center");
+    pdfDoc.cell(70, 199, 25, 7, " "); pdfDoc.text(".", 82.5, 203, null, null, "center");
+    pdfDoc.cell(95, 199, 25, 7, " "); pdfDoc.text(".", 107.5, 203, null, null, "center");
+    pdfDoc.cell(120, 199, 25, 7, " "); pdfDoc.text(".", 132.5, 203, null, null, "center");
+    pdfDoc.cell(145, 199, 25, 7, " "); pdfDoc.text(".", 157.5, 203, null, null, "center");
+    pdfDoc.cell(170, 199, 25, 7, " "); pdfDoc.text(".", 182.5, 203, null, null, "center");
+
+    pdfDoc.cell(15, 206, 30, 7, " "); pdfDoc.text("09 Anos", 30, 211, null, null, "center");
+    pdfDoc.cell(45, 206, 25, 7, " "); pdfDoc.text(".", 57.5, 210, null, null, "center");
+    pdfDoc.cell(70, 206, 25, 7, " "); pdfDoc.text(".", 82.5, 210, null, null, "center");
+    pdfDoc.cell(95, 206, 25, 7, " "); pdfDoc.text(".", 107.5, 210, null, null, "center");
+    pdfDoc.cell(120, 206, 25, 7, " "); pdfDoc.text(".", 132.5, 210, null, null, "center");
+    pdfDoc.cell(145, 206, 25, 7, " "); pdfDoc.text(".", 157.5, 210, null, null, "center");
+    pdfDoc.cell(170, 206, 25, 7, " "); pdfDoc.text(".", 182.5, 210, null, null, "center");
+
+    pdfDoc.cell(15, 213, 30, 7, " "); pdfDoc.text("08 Anos", 30, 218, null, null, "center");
+    pdfDoc.cell(45, 213, 25, 7, " "); pdfDoc.text(".", 57.5, 217, null, null, "center");
+    pdfDoc.cell(70, 213, 25, 7, " "); pdfDoc.text(".", 82.5, 217, null, null, "center");
+    pdfDoc.cell(95, 213, 25, 7, " "); pdfDoc.text(".", 107.5, 217, null, null, "center");
+    pdfDoc.cell(120, 213, 25, 7, " "); pdfDoc.text(".", 132.5, 217, null, null, "center");
+    pdfDoc.cell(145, 213, 25, 7, " "); pdfDoc.text(".", 157.5, 217, null, null, "center");
+    pdfDoc.cell(170, 213, 25, 7, " "); pdfDoc.text(".", 182.5, 217, null, null, "center");
+
+    pdfDoc.cell(15, 220, 30, 7, " "); pdfDoc.text("07 Anos", 30, 225, null, null, "center");
+    pdfDoc.cell(45, 220, 25, 7, " "); pdfDoc.text(".", 57.5, 224, null, null, "center");
+    pdfDoc.cell(70, 220, 25, 7, " "); pdfDoc.text(".", 82.5, 224, null, null, "center");
+    pdfDoc.cell(95, 220, 25, 7, " "); pdfDoc.text(".", 107.5, 224, null, null, "center");
+    pdfDoc.cell(120, 220, 25, 7, " "); pdfDoc.text(".", 132.5, 224, null, null, "center");
+    pdfDoc.cell(145, 220, 25, 7, " "); pdfDoc.text(".", 157.5, 224, null, null, "center");
+    pdfDoc.cell(170, 220, 25, 7, " "); pdfDoc.text(".", 182.5, 224, null, null, "center");
+
+    pdfDoc.cell(15, 227, 30, 7, " "); pdfDoc.text("06 Anos", 30, 232, null, null, "center");
+    pdfDoc.cell(45, 227, 25, 7, " "); pdfDoc.text(".", 57.5, 231, null, null, "center");
+    pdfDoc.cell(70, 227, 25, 7, " "); pdfDoc.text(".", 82.5, 231, null, null, "center");
+    pdfDoc.cell(95, 227, 25, 7, " "); pdfDoc.text(".", 107.5, 231, null, null, "center");
+    pdfDoc.cell(120, 227, 25, 7, " "); pdfDoc.text(".", 132.5, 231, null, null, "center");
+    pdfDoc.cell(145, 227, 25, 7, " "); pdfDoc.text(".", 157.5, 231, null, null, "center");
+    pdfDoc.cell(170, 227, 25, 7, " "); pdfDoc.text(".", 182.5, 231, null, null, "center");
+
+    pdfDoc.cell(15, 234, 30, 7, " "); pdfDoc.text("05 Anos", 30, 239, null, null, "center");
+    pdfDoc.cell(45, 234, 25, 7, " "); pdfDoc.text(".", 57.5, 238, null, null, "center");
+    pdfDoc.cell(70, 234, 25, 7, " "); pdfDoc.text(".", 82.5, 238, null, null, "center");
+    pdfDoc.cell(95, 234, 25, 7, " "); pdfDoc.text(".", 107.5, 238, null, null, "center");
+    pdfDoc.cell(120, 234, 25, 7, " "); pdfDoc.text(".", 132.5, 238, null, null, "center");
+    pdfDoc.cell(145, 234, 25, 7, " "); pdfDoc.text(".", 157.5, 238, null, null, "center");
+    pdfDoc.cell(170, 234, 25, 7, " "); pdfDoc.text(".", 182.5, 238, null, null, "center");
+
+    pdfDoc.cell(15, 241, 30, 7, " "); pdfDoc.text("04 Anos", 30, 246, null, null, "center");
+    pdfDoc.cell(45, 241, 25, 7, " "); pdfDoc.text(".", 57.5, 245, null, null, "center");
+    pdfDoc.cell(70, 241, 25, 7, " "); pdfDoc.text(".", 82.5, 245, null, null, "center");
+    pdfDoc.cell(95, 241, 25, 7, " "); pdfDoc.text(".", 107.5, 245, null, null, "center");
+    pdfDoc.cell(120, 241, 25, 7, " "); pdfDoc.text(".", 132.5, 245, null, null, "center");
+    pdfDoc.cell(145, 241, 25, 7, " "); pdfDoc.text(".", 157.5, 245, null, null, "center");
+    pdfDoc.cell(170, 241, 25, 7, " "); pdfDoc.text(".", 182.5, 245, null, null, "center");
+
+    pdfDoc.cell(15, 248, 30, 7, " "); pdfDoc.text("03 Anos", 30, 253, null, null, "center");
+    pdfDoc.cell(45, 248, 25, 7, " "); pdfDoc.text(".", 57.5, 252, null, null, "center");
+    pdfDoc.cell(70, 248, 25, 7, " "); pdfDoc.text(".", 82.5, 252, null, null, "center");
+    pdfDoc.cell(95, 248, 25, 7, " "); pdfDoc.text(".", 107.5, 252, null, null, "center");
+    pdfDoc.cell(120, 248, 25, 7, " "); pdfDoc.text(".", 132.5, 252, null, null, "center");
+    pdfDoc.cell(145, 248, 25, 7, " "); pdfDoc.text(".", 157.5, 252, null, null, "center");
+    pdfDoc.cell(170, 248, 25, 7, " "); pdfDoc.text(".", 182.5, 252, null, null, "center");
+
+    pdfDoc.cell(15, 255, 30, 7, " "); pdfDoc.text("02 Anos", 30, 260, null, null, "center");
+    pdfDoc.cell(45, 255, 25, 7, " "); pdfDoc.text(".", 57.5, 259, null, null, "center");
+    pdfDoc.cell(70, 255, 25, 7, " "); pdfDoc.text(".", 82.5, 259, null, null, "center");
+    pdfDoc.cell(95, 255, 25, 7, " "); pdfDoc.text(".", 107.5, 259, null, null, "center");
+    pdfDoc.cell(120, 255, 25, 7, " "); pdfDoc.text(".", 132.5, 259, null, null, "center");
+    pdfDoc.cell(145, 255, 25, 7, " "); pdfDoc.text(".", 157.5, 259, null, null, "center");
+    pdfDoc.cell(170, 255, 25, 7, " "); pdfDoc.text(".", 182.5, 259, null, null, "center");
+
+    pdfDoc.setFontSize(10);
+    pdfDoc.cell(15, 262, 30, 14, " "); pdfDoc.text("Idade", 30, 268, null, null, "center"); pdfDoc.text("Cronológica", 30, 272, null, null, "center");
+    pdfDoc.cell(45, 262, 25, 14, " "); pdfDoc.text("Motricidade", 57, 268, null, null, "center"); pdfDoc.text("Fina", 57, 272, null, null, "center");
+    pdfDoc.cell(70, 262, 25, 14, " "); pdfDoc.text("Motricidade", 82, 268, null, null, "center"); pdfDoc.text("Global", 82, 272, null, null, "center");
+    pdfDoc.cell(95, 262, 25, 14, " "); pdfDoc.text("Equilibrio", 107, 268, null, null, "center"); pdfDoc.text("", 107, 272, null, null, "center");
+    pdfDoc.cell(120, 262, 25, 14, " "); pdfDoc.text("Esquema", 132, 268, null, null, "center"); pdfDoc.text("Corporal", 132, 272, null, null, "center");
+    pdfDoc.cell(145, 262, 25, 14, " "); pdfDoc.text("Oraganização", 157.5, 268, null, null, "center"); pdfDoc.text("Espacial", 157.5, 272, null, null, "center");
+    pdfDoc.cell(170, 262, 25, 14, " "); pdfDoc.text("Oraganização", 182.5, 268, null, null, "center"); pdfDoc.text("Temporal", 182.5, 272, null, null, "center");
+
+    /**Linha */
+    // pdfDoc.line(x1, y1, x2, y2);
+    const LineCoord = GerarPerfilMotor(Children.IMS);
+    pdfDoc.setLineWidth(0.7);
+    pdfDoc.line(57.5, LineCoord[0], 82.5, LineCoord[1]);
+    pdfDoc.line(82.5, LineCoord[1], 107.5, LineCoord[2]);
+    pdfDoc.line(107.5, LineCoord[2], 132.5, LineCoord[3]); 
+    pdfDoc.line(132.5, LineCoord[3], 157.5, LineCoord[4]); 
+    pdfDoc.line(157.5, LineCoord[4], 182.5, LineCoord[5]); 
 
     // Save or display the PDF
     pdfDoc.save(`Avaliação EDMI - ${Children.Name}.pdf`);
 };
+
+function GerarPerfilMotor(IMs) {
+    var ArrayReturn = [];
+    for (let i = 0; i < 6; i++) {
+        console.log(IMs[i]);
+        if (IMs[i] == 0) {
+            ArrayReturn.push(262)
+        } else if (IMs[i] == 24) {
+            ArrayReturn.push(259)
+        } else if (IMs[i] == 36) {
+            ArrayReturn.push(252)
+        } else if (IMs[i] == 48) {
+            ArrayReturn.push(245)
+        } else if (IMs[i] == 60) {
+            ArrayReturn.push(238)
+        } else if (IMs[i] == 72) {
+            ArrayReturn.push(231)
+        } else if (IMs[i] == 84) {
+            ArrayReturn.push(224)
+        } else if (IMs[i] == 96) {
+            ArrayReturn.push(217)
+        } else if (IMs[i] == 108) {
+            ArrayReturn.push(210)
+        } else if (IMs[i] == 120) {
+            ArrayReturn.push(203)
+        } else if (IMs[i] == 132) {
+            ArrayReturn.push(196)
+        }
+    }
+    return ArrayReturn
+}

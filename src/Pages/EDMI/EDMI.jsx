@@ -13,6 +13,18 @@ import './Modal.css'
 export default () => {
 
   function CallRelatorio() {
+    if (StrName, Age == '' || moment(BirthDate).format('DD/MM/YYYY') == 'Invalid date') {
+      ChangerValidadorState(true, "Cadastro")
+      return
+    } else if (Laterality, Eyes, Hands, Feet == '') {
+      ChangerValidadorState(true, "Lateralidades")
+      return
+    } else {
+      let response = confirm('Gostaria de salvar?');
+      if (!response) {
+        return
+      }
+    }
     Relatorio(
       {
         Name: StrName,
@@ -54,11 +66,19 @@ export default () => {
   }, []);
 
   const [Start, SetStart] = useState(true);
+  const [Validador, SetValidador] = useState(false);
+  const [ValidadorVar, SetValidadorVar] = useState('')
   const [ClassSpecial, SetClassSpecial] = useState('');
 
   const ChangerState = (value) => {
     SetStart(value);
   }
+
+  const ChangerValidadorState = (value, msg) => {
+    SetValidador(value);
+    SetValidadorVar(msg);
+  }
+
   const ChangerClassSpecial = (value) => {
     SetClassSpecial(value);
   }
@@ -526,6 +546,11 @@ export default () => {
           ChangerClassSpecial={ChangerClassSpecial}
         />
         : <></>}
+      {Validador ?
+        <ValidadorSpan
+          ChangerValidadorState={ChangerValidadorState}
+          ValidadorVar={ValidadorVar} />
+        : <></>}
     </div>
   )
 }
@@ -568,6 +593,26 @@ const TutorialSpan = ({ ChangerState, ChangerClassSpecial }) => {
               <button onClick={() => { SetCtrlSpan(true); ChangerClassSpecial('CadastroDestaque') }}>Ok!</button>
             </>
           }
+        </div>
+      </div>
+    </div>
+  )
+}
+
+const ValidadorSpan = ({ ChangerValidadorState, ValidadorVar }) => {
+
+  return (
+    <div className="Div-Janela">
+      <div className="Modal Welcome">
+        <div className="ModalHead">
+          <h2>Atenção!</h2>
+        </div>
+        <div className="ModalBody">
+          <div className="DivBody">
+            <p>Preencha corretamente os informações necessárias! </p>
+            <p>Ver: {ValidadorVar} </p>
+          </div>
+          <button onClick={() => { ChangerValidadorState(false) }}>Ok!</button>
         </div>
       </div>
     </div>
