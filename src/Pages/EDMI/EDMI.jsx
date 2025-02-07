@@ -319,7 +319,7 @@ export default () => {
   }
 
   const Classificar = () => {
-    console.log('Classificar');
+    // console.log('Classificar');
     console.log(QMG);
     if (QMG == 0) {
       SetEsD(" ")
@@ -408,7 +408,17 @@ export default () => {
             <button onClick={() => {
               SetBoolPoints(!BoolPoints);
               if (StrName == 'Manual') {
-                alert('Download do manual!')
+                // alert('Download do manual!');
+                const fileURL = '../../../public/vite.svg'
+                const fileName = 'vite.svg'; // Nome do arquivo que será baixado
+
+                // Cria um link temporário para o arquivo
+                const link = document.createElement('a');
+                link.href = fileUrl;
+                link.download = fileName;
+
+                // Dispara o clique no link para iniciar o download
+                link.click();
               }
             }}>&#8596;</button>
           </span>
