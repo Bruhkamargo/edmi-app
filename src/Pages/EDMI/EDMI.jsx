@@ -409,8 +409,8 @@ export default () => {
               SetBoolPoints(!BoolPoints);
               if (StrName == 'Manual') {
                 // alert('Download do manual!');
-                const fileURL = '../../../public/vite.svg'
-                const fileName = 'vite.svg'; // Nome do arquivo que será baixado
+                const fileURL = '../../../public/Manual.pdf'
+                const fileName = 'Manual.pdf'; // Nome do arquivo que será baixado
 
                 // Cria um link temporário para o arquivo
                 const link = document.createElement('a');
