@@ -414,7 +414,7 @@ export default () => {
 
                 // Cria um link temporário para o arquivo
                 const link = document.createElement('a');
-                link.href = fileUrl;
+                link.href = fileURL;
                 link.download = fileName;
 
                 // Dispara o clique no link para iniciar o download
